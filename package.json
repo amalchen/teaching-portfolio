@@ -12,9 +12,9 @@
   "homepage": "https://amalchen.github.io/teaching-portfolio",
 
   "devDependencies": {
-    "astro": "^0.20.5"
+    "astro": "^0.20.5",
+    "gh-pages": "^3.2.3"
   },
   "dependencies": {
-    "gh-pages": "^3.2.3"
   }
 }

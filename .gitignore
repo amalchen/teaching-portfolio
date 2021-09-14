@@ -3,6 +3,7 @@
 
 #misc
 .ignore
+deploy.ps1
 
 # dependencies
 node_modules/

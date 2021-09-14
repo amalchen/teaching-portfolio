@@ -1,6 +1,5 @@
 $targetDomain = "www.amalchen.com"
 
-
 #my attempt to emulate: set -e
 #goal: stop script on first error
 $ErrorActionPreference = "Stop"
@@ -22,4 +21,4 @@ git add --all
 git commit -m 'deploy'
 
 #deploy to gh-pages branch
-git push -f git@github.com:amalchen/teaching-portfolio.git main:gh-pages
+#git push -f git@github.com:amalchen/teaching-portfolio.git main:gh-pages
