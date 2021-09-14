@@ -16,5 +16,10 @@ ni -i file .nojekyll
 #create CNAME record for dns (in same dir as nojekyll file)
 $targetDomain > "CNAME"
 
+#setup repo
+git init
+git add --all
+git commit -m 'deploy'
 
-
+#deploy to gh-pages branch
+git push -f git@github.com:amalchen/teaching-portfolio.git main:gh-pages
