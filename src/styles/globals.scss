@@ -1,0 +1,302 @@
+//----------------------------------------(40)
+//------------------------------------------------------------(60)
+//----------------------------------------------------------------------(70)
+//--------------------------------------------------------------------------------(80)
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900');
+
+//'Roboto', sans-serif;
+//'Montserrat', sans-serif;
+//'Source Sans Pro', sans-serif;
+
+//--------------------------------------------------------------------------------(80)
+//--------------------------------------------------------------------------------(80)
+
+
+//general vars
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Source Sans Pro', sans-serif;
+$border-radius: 10px;
+
+//calculated vars
+//$header-height: $header-lineheight + ($header-vpadding*2);
+
+body {
+    font-family: $font-primary;
+    background: #efefef;
+}
+
+/*
+todo:
+- add link styling
+- test list styling
+- add tooltip effect for certain list elements
+- add photo + contact info to header?
+- try repeating background once colors are figured out
+*/
+
+
+//--------------------------------------------------------------------------------(80)
+
+$header-lineheight: 50px; //for now, this dictates the height of the bar content
+$header-vpadding: 15px;
+
+header {
+    //position header
+    //position: sticky; top: 10px;
+    position: sticky;
+    top: 0;
+    
+    //spacing/dimensions
+    padding: $header-vpadding 30px;
+    height: $header-lineheight + ($header-vpadding*2);
+    //width: $page-width;
+    
+    //top bar bg/bdr
+    background: #ececec;
+    background-image: radial-gradient(circle, 
+        //rgba(223,219,219,.1) 0%, //center circle 
+            rgba(255,255,255,1),
+            rgba(0,0,0,.1) 70%, //ring 1
+            rgba(0,0,0,.2) 100% //ring 2
+        ); 
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4); //was .2
+    
+    border-radius: 0px 0px $border-radius $border-radius; //TR TL BL BR
+    //border-radius: 3px;
+    
+    border: 1px solid rgba(0,0,0,.3); //was .2
+    border-top: none;
+    
+    //----------------------------------------(40)
+    
+    //layout
+    display: flex;
+    
+    //item-specific styles
+    .owner {
+        line-height: $header-lineheight;
+        font-weight: bold;
+        font-size: 1.2rem;
+        
+        flex-grow: 0;
+    }
+    .document-type {
+        text-align: right;
+        line-height: $header-lineheight;
+        font: $font-secondary;
+        
+        flex-grow: 1;
+    }
+    
+    /// figure out header item alignment
+    //div { border: 1px solid black; } //use this to preview grid
+    
+    /// FLEXBOX APPROACH: ref = https://is.gd/ryvGsM
+    //display: flex;
+    //push last item over
+    //div:last-of-type { margin-left: auto; }
+    
+    /// GRID APPROACH
+    //this requires an extra div in the middle
+    /*
+    display: grid;
+    grid-template-areas: 'name doc';
+    grid-template-columns: 2fr 1fr 2fr;
+    .owner { grid-area: 'name'; }
+    .document-type {grid-area: 'doc'; }
+    */
+}
+
+//--------------------------------------------------------------------------------(80)
+
+
+//these apply to the entire page
+$content-width: 80%;
+$content-minwidth: 80%;
+$content-spacing: 1rem;
+
+//$sidebar-width: 250px;
+$sidebar-textcolor-primary: #333;
+$sidebar-textcolor-secondary: #666;
+
+main {
+    //DEBUGGING
+    & > * {
+        //background: #ccc;
+        //border: 1px dotted #999;
+    }
+    
+    margin-top: $content-spacing;
+    margin-left: auto;
+    margin-right: auto;
+    width: $content-width;
+    min-width: $content-minwidth;
+    
+    
+    //layout
+    display: flex;
+    align-items: flex-start;
+    
+    //------------------------------------------------------------(60)
+    //------------------------------------------------------------(60)
+    
+    /// => SIDE BAR
+    & .sidebar {
+        position: sticky;
+        top: 100px;
+        //width: 200px;
+        margin-right: $content-spacing;
+        flex-grow: 0;
+        
+        //set the width of the sidebar here
+        & nav {
+            width: 12rem;
+        }
+        
+        
+        
+        
+        background: #ececec;
+        background-image: radial-gradient(circle, 
+            //rgba(223,219,219,.1) 0%, //center circle 
+            rgba(255,255,255,.7),
+            rgba(232,203,141,.1) 90%, //ring 1
+            rgba(236,236,236,.1) 100% //ring 2
+        ); 
+
+        //borders
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+        border-radius: $border-radius;
+        border: 1px solid rgba(0,0,0,.2);
+
+        //padding/spacing 
+        padding: 30px;
+        
+        & a {
+            color: #439400;
+            font-weight: bold;
+        }
+        
+        //----------------------------------------(40)
+        & .toc {
+            //position: fixed;
+            padding: 0.5rem;
+            font-size: .85rem;
+            line-height: 2;
+
+            ul { list-style: none; padding: 0; margin: 0; }
+            ul ul { padding-left: 1em; } //additional indent for sub-sections
+            
+            
+            li a {
+                display: inline-block;
+                color: #aaa;
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+            }
+            li.visible > a { color: #111111; transform: translate(5px); }
+            li a:hover { color: #111111; }
+        }
+        
+        & .toc-marker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            path {
+                transition: all 0.3s ease;
+            }
+        }
+        
+    } //sidebar-end
+    
+    //------------------------------------------------------------(60)
+    //------------------------------------------------------------(60)
+    
+    /// => MAIN CONTENT
+    & article {
+        margin-left: auto;
+        min-height: 300px;
+        min-width: 400px;
+        flex-grow: 1;
+        
+        & section {
+            //padding/spacing 
+            padding: 30px;
+            margin-bottom: 20px;
+            //size
+            min-height: 100px;
+
+            background: #ffffff;
+            background-image: radial-gradient(circle, 
+                //rgba(223,219,219,.1) 0%, //center circle 
+                    rgba(255,255,255,.7),
+                    rgba(232,203,141,.1) 90%, //ring 1
+                    rgba(236,236,236,.1) 100% //ring 2
+                ); 
+
+            //borders
+            box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+            border-radius: 15px;
+            border: 1px solid rgba(0,0,0,.2);
+        }
+        //alternating section colors if wanted
+        & section:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        //typography 
+        color: #333;
+        //font-family: 'Montserrat', sans-serif;
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 1.4rem; //1.5*16 = default
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: .9rem;
+            margin: 20px 5p;
+            border-left: 5px solid #ccc;
+            padding: 5px 5px 5px 20px;
+        }
+
+        //picking p #2+ (i.e. when two p's follow each other)
+        p + p {
+            //color: red;
+            margin-top: 10px;
+        }
+    } //article-end
+}
+
+//--------------------------------------------------------------------------------(80)
+
+footer {
+    margin-top: 40px;
+    line-height: 70px;
+    background: #666;
+    color: #efefef;
+    font-size: 1.2rem;
+    
+    text-align: center;
+}
+
+
+
+
+//------------------------------------------------------------(60)
+//------------------------------------------------------------(60)
+//------------------------------------------------------------(60)
+//------------------------------------------------------------(60)

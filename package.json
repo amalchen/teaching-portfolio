@@ -1,0 +1,24 @@
+{
+  "name": "@fx/teaching-portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    
+    //may not need
+    "deploy": "gh-pages -d dist"
+  },
+
+  //may not need
+  "homepage": "https://amalchen.github.io/teaching-portfolio",
+
+  "devDependencies": {
+    "astro": "^0.20.5"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

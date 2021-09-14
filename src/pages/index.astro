@@ -1,0 +1,382 @@
+---
+// Component Imports
+//import Tour from '../components/Tour.astro';
+// You can import components from any supported Framework here!
+
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+//let title = 'My Astro Site';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- using a var defined above: (within the --- barriers)
+        <title>{title}</title>
+    -->
+    <meta
+      name="author"
+      content="Tony"
+    />
+    <title>Annmarie's Teaching Portfolio</title>
+
+    <!-- css-libs -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- css: local/project 
+         ref: docs.astro.build/guides/styling -> "SASS" section
+    -->
+    <link rel="stylesheet" href={Astro.resolve("../styles/globals.css")} />
+
+    <!-- css: page-specific (can support scss)-->
+    <style lang="scss">
+        $boop: #990000;
+        .boop { color: $boop; }
+    </style>
+
+    <!--
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <style>
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: min(100%, 68ch);
+        }
+    </style>
+    -->
+</head>
+<body>
+
+    <header>
+        <div class="owner">Spiffy Owner (add contact info below name)?</div>
+        <div class="document-type">Teaching Portfolio (add org icon here?)</div>
+        <br /> <!-- cheap/ghetto alternative to overflow: auto (for wrapping float'd content) -->
+    </header>
+
+    <!-- ================================================================================(80) -->
+    
+    <main role="main" id="content">
+        <div class="sidebar">
+            <nav class="toc">
+                <ul>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#philosophy">Teaching Philosophy</a></li>
+                    <li><a href="#remote-learning">Remote Learning</a></li>
+                    <li>
+                        <a href="#community-involvement">Community Involvement</a>
+                    </li>
+                    <li>
+                        <a href="#goals">Goals</a>
+                        <ul>
+                            <li><a href="#goals-professionalism">Teaching Professionalism</a></li>
+                            <li><a href="#goals-localchildcare">Training Next Generation</a></li>
+                            <li><a href="#goals-technology">Embracing Technology</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#future">Moving Forward</a>
+                        <ul>
+                            <li><a href="#future-concerns">Concerns</a></li>
+                            <li><a href="#future-hope">Reasons for Hope</a></li>
+                        </ul>
+                    </li>
+                    <!-- lists of crap/boring stuff (aka lists) -->
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#professional-dev">Professional Development</a></li>
+                    <li><a href="#college-service">College Service List</a></li>
+                </ul>
+                <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+                </svg>
+            </nav>
+        </div>
+
+        <!-- ============================================================(60) -->
+
+        <article>
+            <!-- section: welcome -->
+            <section>
+                <div id="welcome">
+                    <h1>Welcome</h1>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                </div>
+            </section>
+            <!-- section: philosophy -->
+            <section>
+                <div id="philosophy">
+                    <h1>Teaching Philosophy</h1>
+                    <p>
+                        May include: timeline with ideological progression (approach to teaching, etc)
+
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum ex, ullamcorper a turpis
+                        a, convallis maximus ante. Nullam ultrices non libero sit amet dictum. Integer id posuere turpis,
+                        vel blandit purus. Vivamus at venenatis tellus. Integer imperdiet neque vitae arcu porta, ultrices
+                        commodo est suscipit. Quisque et consequat nibh. Pellentesque dictum tellus suscipit, consequat
+                        lectus eget, dictum orci. Vestibulum ac arcu quis justo tincidunt viverra. Nullam malesuada eu
+                        diam sed pharetra. Aliquam lobortis urna eu consectetur lobortis. Fusce non leo eget mauris iaculis
+                        convallis vel eget orci. Aenean sit amet felis ac justo fringilla dictum. Praesent pellentesque
+                        lacus ac semper interdum. Pellentesque consequat massa diam, blandit imperdiet metus interdum
+                        in. Vestibulum molestie egestas pulvinar.
+                    </p>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum ex, ullamcorper a turpis
+                        a, convallis maximus ante. Nullam ultrices non libero sit amet dictum. Integer id posuere turpis,
+                        vel blandit purus. Vivamus at venenatis tellus. Integer imperdiet neque vitae arcu porta, ultrices
+                        commodo est suscipit. Quisque et consequat nibh. Pellentesque dictum tellus suscipit, consequat
+                        lectus eget, dictum orci. Vestibulum ac arcu quis justo tincidunt viverra. Nullam malesuada eu
+                        diam sed pharetra. Aliquam lobortis urna eu consectetur lobortis. Fusce non leo eget mauris iaculis
+                        convallis vel eget orci. Aenean sit amet felis ac justo fringilla dictum. Praesent pellentesque
+                        lacus ac semper interdum. Pellentesque consequat massa diam, blandit imperdiet metus interdum
+                        in. Vestibulum molestie egestas pulvinar.
+                    </p>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum ex, ullamcorper a turpis
+                        a, convallis maximus ante. Nullam ultrices non libero sit amet dictum. Integer id posuere turpis,
+                        vel blandit purus. Vivamus at venenatis tellus. Integer imperdiet neque vitae arcu porta, ultrices
+                        commodo est suscipit. Quisque et consequat nibh. Pellentesque dictum tellus suscipit, consequat
+                        lectus eget, dictum orci. Vestibulum ac arcu quis justo tincidunt viverra. Nullam malesuada eu
+                        diam sed pharetra. Aliquam lobortis urna eu consectetur lobortis. Fusce non leo eget mauris iaculis
+                        convallis vel eget orci. Aenean sit amet felis ac justo fringilla dictum. Praesent pellentesque
+                        lacus ac semper interdum. Pellentesque consequat massa diam, blandit imperdiet metus interdum
+                        in. Vestibulum molestie egestas pulvinar.
+                    </p>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                </div>
+            </section>
+            <!-- section: remote-learning -->
+            <section>
+                <div id="remote-learning">
+                    <h1>Remote Learning</h1>
+                    <p>Put the technique's you've found that work well within zoom. The goal of this
+                        section is to basically express your 'remote learning teaching philosophy', etc.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- section: community-involvement -->
+            <section>
+                <div id="community-involvement">
+                    <h1>Community Involvement</h1>
+                    <p>Stuff</p>
+                </div>
+            </section>
+            
+            <!-- section: goals -->
+            <section>
+                <div id="goals">
+                    <h1>Goals</h1>
+                </div>
+
+                <div id="goals-professionalism">
+                    <h2>Teach My Students Not to be Scrubs</h2>
+                    <p>
+                        <em>We don't want no scrubs...</em>
+                        <br /><br />
+                        Don't say "hey &lt;name&gt;"~ aka teaching how to act like a professional
+                        (when dealing with children, parents, directors, etc).
+                    </p>
+                </div>
+
+                <div id="goals-localchildcare">
+                    <h2>Local Childcare</h2>
+                    <p>
+                        Training the next generation of teachers.
+                        <br />
+                        <br />
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                </div>
+                <div id="goals-technology">
+                    <h2>Teaching with Technology</h2>
+                    <p>
+                        With the increased demand for remote learning, learning more about tech is important. etc.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- section: future -->
+            <section>
+                <div id="future">
+                    <h1>Moving Forward</h1>
+                </div>
+                <div id="future-concerns">
+                    <h2>Concerns</h2>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                </div>
+                <div id="future-hope">
+                    <h2>Reasons for Hope</h2>
+                    <p>
+                        Nam sit amet libero ut quam dignissim varius a eu turpis. Sed sollicitudin nunc quis velit
+                        imperdiet, non porta ligula ullamcorper. Morbi nec quam vestibulum, blandit risus at,
+                        pellentesque neque. Morbi dapibus nec nunc at molestie. Praesent luctus vitae tellus eget
+                        scelerisque. Vestibulum interdum quam nec volutpat dictum. Curabitur sagittis fringilla eros.
+                        Sed vehicula eleifend odio, vitae vulputate arcu.
+                    </p>
+                </div>
+            </section>
+            
+            
+            
+            <!-- section: teaching -->
+            <section>
+                <div id="teaching">
+                    <h1>Teaching</h1>
+                    <p>This section should discuss interactions with students (so teaching, advising, 
+                    presenting, etc).
+                    </p>
+                </div>
+                <div id="teaching-advising">
+                    <h2>Advising</h2>
+                    <p>Talk about advising and how students are a pain in the 
+                        <span style="font-weight: bold; color: #ff0000;">ass</span></p>
+                </div>
+                <div id="teaching-credit">
+                    <h2>Credit Courses</h2>
+                    <ul>
+                        <li>EDUC 101</li>
+                        <li>EDUC 102</li>
+                        <li>EDUC 103</li>
+                        <li>EDUC 104</li>
+                        <li>EDUC 105</li>
+                        <li>EDUC 106</li>
+                        <li>EDUC 107</li>
+                        <li>EDUC 108</li>
+                        <li>EDUC 109</li>
+                    </ul>
+                </div>
+                <div id="teaching-workforce">
+                    <h2>Workforce Development Courses</h2>
+                    <p>For the majority of my professional career as an educator I have taught,
+                        and administered tests for, the CDA course.
+                        <br/>
+                        <em>Explain a little about what this is, and why it is important. For example,
+                        you could say that doing so is important cuz local people need it ot work in 
+                        the field.</em>
+                        <br/>
+                        It not only helps the students by allowing them to work with children but
+                        students often start with the non-credit CDA course, and then join program
+                        which helps school/program. (aka helps with recruitment)
+                    </p>
+                </div>
+                <div id="teaching-conferences">
+                    <h2>Conference Presentations</h2>
+                    <p>I presented workshops to early childhood educators at the following conferences:
+                    <ul>
+                        <li>Capital Association for Young Children</li>
+                        <li>Association for the Education of Young Children</li>
+                        <li>Association for the Education of Young Children</li>
+                        <li>Association for the Education of Young Children</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- section: professional-dev -->
+            <section>
+                <div id="professional-dev">
+                    <h1>Professional Development</h1>
+                    <p>Should be a list of trainings.</p>
+                </div>
+            </section>
+            
+            
+            <!-- section: professional-dev -->
+            <section>
+                <div id="college-service">
+                    <h1>College Service</h1>
+                    <p>stuff done for the school (reviewing scholarships, etc)</p>
+                </div>
+            </section>
+            
+            
+            
+            
+            
+            
+            
+            <!-- section setup -->
+            <section>
+                <div id="misc" style="height: 500px;">
+                    <h1>heading</h1>
+                    <p>content</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <!-- ================================================================================(80) -->
+
+    <footer>main footer</footer>
+
+
+    <!-- js: libs -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- js: local -->
+    <script src="/js/toc-marker.js"></script>
+    <script src="/js/smooth-scrolling.jquery.js"></script>
+    
+  </body>
+</html>
