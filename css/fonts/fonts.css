@@ -1,0 +1,13 @@
+/* ----------------------------------------------------------------
+    Fonts
+
+    Replace your Fonts as necessary
+-----------------------------------------------------------------*/
+
+@font-face {
+    font-family: "cute-aurora";
+    src: url("CuteAurora.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
